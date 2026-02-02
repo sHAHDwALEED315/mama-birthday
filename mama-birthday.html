@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كل سنة وإنتِ طيبة يا ماما 🤍</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --beige: #f3e8dc;
+      --light: #fffaf5;
+      --brown: #6b3f2a;
+      --soft: #8a5a44;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, var(--beige), #e6d3bf);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+      color: var(--brown);
+    }
+
+    .card {
+      position: relative;
+      background: var(--light);
+      max-width: 420px;
+      width: 100%;
+      padding: 28px 22px 32px;
+      border-radius: 26px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      overflow: hidden;
+    }
+
+    /* 🌸 ورد ديكوري */
+    .flower {
+      position: absolute;
+      font-size: 26px;
+    }
+
+    .flower.top-left { top: 12px; left: 14px; }
+    .flower.bottom-right { bottom: 14px; right: 18px; }
+
+    /* 🦋 فراشات */
+    .butterfly {
+      position: absolute;
+      font-size: 20px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .b1 { top: 120px; right: 20px; }
+    .b2 { top: 160px; left: 24px; animation-delay: 1.5s; }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* صورة ماما */
+    .image-wrapper {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: #f0e2d4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-wrapper img {
+      width: 140px;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin: 10px 0 6px;
+    }
+
+    h2 {
+      font-size: 18px;
+      color: var(--soft);
+      margin-bottom: 18px;
+    }
+
+    p {
+      font-size: 15.5px;
+      line-height: 1.9;
+      margin-bottom: 14px;
+    }
+
+    .btn {
+      margin-top: 14px;
+      display: inline-block;
+      padding: 12px 26px;
+      background: var(--soft);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 999px;
+      font-size: 14.5px;
+    }
+    
+    /* 💖 قلوب */
+.heart {
+  position: fixed;
+  font-size: 20px;
+  animation: heartFly 3s ease-out forwards;
+  pointer-events: none;
+  z-index: 999;
+}
+
+@keyframes heartFly {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+
+    .footer {
+      margin-top: 22px;
+      font-size: 13px;
+      opacity: 0.8;
+    }
+  </style>
+
+  <script>
+  function showHearts(e) {
+    e.preventDefault();
+
+    const colors = ["💖", "💗", "💝", "🤍", "💕"];
+
+    for (let i = 0; i < 25; i++) {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerText = colors[Math.floor(Math.random() * colors.length)];
+
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.top = Math.random() * window.innerHeight + "px";
+      heart.style.fontSize = 16 + Math.random() * 16 + "px";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 3000);
+    }
+  }
+</script>
+
+</head>
+
+<body>
+
+  <div class="card">
+    <!-- ورد -->
+    <div class="flower top-left">🌸</div>
+    <div class="flower bottom-right">🌷</div>
+
+    <!-- فراشات -->
+    <div class="butterfly b1">🦋</div>
+    <div class="butterfly b2">🦋</div>
+
+    <!-- صورة -->
+    <div class="image-wrapper">
+      <img src="mama.png" alt="Mama Illustration">
+    </div>
+
+    <h1>كل سنة وإنتِ طيبة</h1>
+    <h2>يا أغلى ماما في الدنيا</h2>
+
+    <p>
+      النهارده مش يوم عادي،  
+      ده يوم ميلاد أحن قلب وأجمل روح.  
+      اليوم اللي الدنيا نورت فيه بوجودك 🤎
+    </p>
+
+    <p>
+      ربنا يخليكي ليا دايمًا  
+      ويجعل أيامك كلها فرح وراحة بال 🌸
+    </p>
+
+    <a href="#" class="btn" onclick="showHearts(event)">🤍 بحبك يا ماما 🤍</a>
+
+
+    <div class="footer">
+      — من قلب بنتك اللي بتحبك —
+    </div>
+
+  </div>
+
+</body>
+</html>
+
